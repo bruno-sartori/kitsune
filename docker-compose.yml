@@ -1,0 +1,18 @@
+name: kitsune
+services:
+  local-sql-db:
+    image: mysql:latest
+    container_name: kitsune-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: bukassas9
+      MYSQL_DATABASE: kitsune
+      MYSQL_USER: kitsune
+      MYSQL_PASSWORD: bukassas9nya
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql-data:/var/lib/mysql # Change this path as per your preference
+
+volumes:
+  mysql-data:
