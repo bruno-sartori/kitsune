@@ -5,6 +5,12 @@ import { Request, Response } from "express";
 const googleHomeService = new GoogleHomeService();
 
 class GoogleHomeController {
+  public async init(req: Request, res: Response, next: any) {
+    const { firebase } = req;
+    googleHomeService.setDb(firebase);
+    next();
+  }
+
   public async execIntent(req: Request, res: Response) {
     const payload = req.body;
     let { user } = req;

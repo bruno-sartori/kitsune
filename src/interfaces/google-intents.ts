@@ -33,7 +33,7 @@ export type ExecuteIntent = {
             brightness?: number,
             color?: {
               name?: string,
-              temperature?: number,
+              temperatureK?: number,
               spectrumRgb?: number
             }
           }

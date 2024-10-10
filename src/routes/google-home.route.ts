@@ -5,6 +5,7 @@ import authMiddleware from "@middlewares/auth.middleware";
 const router = Router();
 const googleHomeController = new GoogleHomeController();
 
+router.use(googleHomeController.init);
 router.post('/intent', googleHomeController.execIntent);
 
 export default router;

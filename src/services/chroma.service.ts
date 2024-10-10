@@ -48,7 +48,7 @@ class ChromaService {
     
     console.log(`Creating effect for ${device} device...`);
     const response = await axios.post(`${this.chromaUri}/${device}`, effect);
-    console.log(`${device} effect created: ${response.data}`);
+    console.log(`${device} effect created: ${JSON.stringify(response.data)}`);
     
     return response.data;
   }

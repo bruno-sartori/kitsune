@@ -5,6 +5,12 @@ import { Request, Response } from "express";
 const deviceService = new DeviceService();
 
 class DeviceController {
+  public async init(req: Request, res: Response, next: any) {
+    const { firebase } = req;
+    deviceService.setDb(firebase);
+    next();
+  }
+
   public async getAvailableDevices(req: Request, res: Response) {
     const { user } = req;
 
